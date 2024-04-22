@@ -118,4 +118,62 @@ public class MultithreadedTest {
         }
         assertEquals(4, trueCount);
     }
+
+    @Test
+    void fourConsumersOneProducer() {
+        queue = new ThreadSafeSemaphoreQueue<>(1);
+        boolean shouldNotHaveBeenReached = false;
+        boolean[] threadsBlocked = new boolean[5];
+        Thread producerThread = new Thread(() -> {
+            try {
+                queue.add(42);
+            } catch (InterruptedException blocked) {
+                /* We will use 0th index to denote the producer thread. */
+                threadsBlocked[0] = true;
+            }
+        });
+        producerThread.start();
+
+        Thread[] consumerThreads = new Thread[4];
+        for (int i = 0; i < 4; i++) {
+            int finalI = i;
+            consumerThreads[i] = new Thread(() -> {
+                try {
+                    queue.remove();
+                } catch (InterruptedException blocked) {
+                    threadsBlocked[finalI+1] = true;
+                }
+            });
+            try {
+                consumerThreads[i].start();
+            } catch (Exception unexpected) {
+                shouldNotHaveBeenReached = true;
+            }
+        }
+
+        try {
+            Thread.sleep(5000);
+        } catch (Exception unexpected) {
+            shouldNotHaveBeenReached = true;
+        }
+
+        for (int i = 0; i < 4; i++) {
+            try {
+                consumerThreads[i].interrupt();
+                consumerThreads[i].join(5000);
+            } catch (Exception unexpected) {
+                shouldNotHaveBeenReached = true;
+            }
+        }
+
+        assertFalse(shouldNotHaveBeenReached);
+
+        int trueCount = 0;
+        for (int i = 0; i < 5; i++) {
+            if (threadsBlocked[i]) {
+                trueCount++;
+            }
+        }
+        assertEquals(3, trueCount);
+    }
 }

@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01456b95-7003-46ea-afd5-a5fc2f23e8e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e366e4f8ab4feb48990ef3d671d70d2bb46e40e" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e366e4f8ab4feb48990ef3d671d70d2bb46e40e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/MultithreadedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/MultithreadedTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +47,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Gradle.DemoQueue [:Main.main()].executor": "Run",
     "Gradle.MultithreadedTest.addBlocksWhenFull.executor": "Run",
+    "Gradle.MultithreadedTest.fourConsumersOneProducer.executor": "Run",
     "Gradle.MultithreadedTest.queueCapacityOneFourBlockedThreads.executor": "Run",
     "Gradle.MultithreadedTest.removeBlocksWhenEmpty.executor": "Run",
     "Gradle.ThreadSafeQueueTest.canPutThings.executor": "Run",
@@ -86,7 +78,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.MultithreadedTest.queueCapacityOneFourBlockedThreads">
+  <component name="RunManager" selected="Gradle.MultithreadedTest.fourConsumersOneProducer">
     <configuration name="MultithreadedTest.addBlocksWhenFull" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -101,6 +93,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;org.example.MultithreadedTest.addBlocksWhenFull&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="MultithreadedTest.fourConsumersOneProducer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.example.MultithreadedTest.fourConsumersOneProducer&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -185,6 +201,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MultithreadedTest.fourConsumersOneProducer" />
         <item itemvalue="Gradle.MultithreadedTest.queueCapacityOneFourBlockedThreads" />
         <item itemvalue="Gradle.MultithreadedTest.addBlocksWhenFull" />
         <item itemvalue="Gradle.MultithreadedTest.removeBlocksWhenEmpty" />
@@ -210,7 +227,7 @@
       <updated>1713561455343</updated>
       <workItem from="1713561456367" duration="14182000" />
       <workItem from="1713671781116" duration="1177000" />
-      <workItem from="1713672973406" duration="12054000" />
+      <workItem from="1713672973406" duration="19749000" />
     </task>
     <servers />
   </component>
